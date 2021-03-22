@@ -36,5 +36,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             stopService(Intent(this, NewService::class.java))
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        stopService(Intent(this, NewService::class.java))
+    }
 }
 
